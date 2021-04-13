@@ -8,9 +8,9 @@
 
 import SwiftUI
 
-struct InnerCircleShadow: ViewModifier {
+struct InnerCircleShadowModifier: ViewModifier {
     func body(content: Content) -> some View {
-        ZStack(alignment: .bottomTrailing) {
+        ZStack {
             content
                 .overlay(
                     Circle()
@@ -32,6 +32,6 @@ struct InnerCircleShadow: ViewModifier {
 
 extension View {
     func innerCircleShadow() -> some View {
-        self.modifier(InnerCircleShadow())
+        self.modifier(InnerCircleShadowModifier())
     }
 }
