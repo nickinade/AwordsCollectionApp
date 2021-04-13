@@ -16,7 +16,7 @@ struct ShapesView: View {
                     GradientRectangles(width: 250, height: 250)
                     PathView(width: 250, height: 250)
                     CurvesView(width: 250, height: 250)
-                    CustomView(width: 250, height: 250)
+                    AchivementView(width: 250, height: 250)
                 }
             }
             .navigationBarTitle("Shapes")

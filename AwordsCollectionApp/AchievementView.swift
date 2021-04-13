@@ -1,5 +1,5 @@
 //
-//  AchivementView.swift
+//  AchievementView.swift
 //  AwordsCollectionApp
 //
 //  Created by Nikita Benin on 13.04.2021.
@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct AchivementView: View {
+struct AchievementView: View {
     
     let width: CGFloat
     let height: CGFloat
@@ -52,6 +52,6 @@ struct AchivementView: View {
 
 struct CustomView_Previews: PreviewProvider {
     static var previews: some View {
-        CustomView(width: 250, height: 250)
+        AchievementView(width: 250, height: 250)
     }
 }
