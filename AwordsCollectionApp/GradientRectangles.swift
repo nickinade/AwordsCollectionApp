@@ -24,10 +24,12 @@ struct GradientRectangles: View {
                                 endPoint: UnitPoint(x: 1, y: 0)
                             )
                         )
-                        .scaleEffect(0.7)
+                        .frame(
+                            width: geometry.size.width * 0.7,
+                            height: geometry.size.height * 0.7
+                        )
                         .rotationEffect(.degrees(Double(iteration) * 60))
                 }
-                
                 Image(systemName: "airplane")
                     .resizable()
                     .rotationEffect(.degrees(-90))

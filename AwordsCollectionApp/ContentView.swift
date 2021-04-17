@@ -13,20 +13,25 @@ struct ContentView: View {
     
     var body: some View {
         VStack {
-            Button(action: buttonAction) {
+            Button(action: {
+                withAnimation {
+                    showShape.toggle()
+                }
+            }) {
                 HStack {
                     Text(showShape ? "Hide Shape" : "Show Shape")
-                    Spacer()
                     Image(systemName: "chevron.up.square")
-                        .scaleEffect(showShape ? 2 : 1)
                         .rotationEffect(.degrees(showShape ? 0 : 180))
+//                        .animation(.easeInOut)
                 }
             }
+            
             Spacer()
             
             if showShape {
                 GradientRectangles(width: 250, height: 250)
-                    .transition(.trasition)
+                    .animation(.default)
+                    .transition(.transition)
             }
             
             Spacer()
@@ -34,16 +39,10 @@ struct ContentView: View {
         .font(.headline)
         .padding()
     }
-    
-    private func buttonAction() {
-        withAnimation {
-            showShape.toggle()
-        }
-    }
 }
 
 extension AnyTransition {
-    static var trasition: AnyTransition {
+    static var transition: AnyTransition {
         let insertion = AnyTransition.move(edge: .leading)
             .combined(with: .scale)
         let removal = AnyTransition.scale
